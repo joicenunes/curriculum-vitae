@@ -1,0 +1,120 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: #afafaf;
+  line-height: 1.6em;
+}
+
+main {
+  max-width: 960px;
+  margin: auto;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#header {
+  padding: 60px;
+  background-color: #545454;
+  color: white;
+  text-align: center;
+}
+
+#header h1 {
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  /* margin: 0; */
+}
+
+.h-divisor {
+  width: 50%;
+  height: 1px;
+  background-color: white;
+  margin: auto;
+}
+
+#header h4 {
+  font-weight: 100;
+  letter-spacing: 0.1em;
+}
+
+#header p {
+  font-size: 0.75em;
+}
+
+#nav {
+  /* position:absolute;
+  top:115px;
+  left: 0; */
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  background-color: #808080;
+  width: 100%;
+  max-width: inherit;
+  z-index: 999;
+}
+
+#nav.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.sticky + .main {
+  padding-top: 60px;
+}
+
+#nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  width: 20%;
+}
+
+#nav a:hover {
+  background-color: #afafaf;
+  color: black;
+}
+
+.main {
+  padding: 15px;
+  background-color: white;
+}
+
+.section {
+  padding-top: 1em;
+}
+
+h2.section-title {
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+h5 {
+  color: #fff;
+  font-weight: 100;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#footer {
+  padding: 20px;
+  text-align: center;
+  background: #545454;
+}
+
+@media screen and (max-width: 400px) {
+  #nav a {
+    float:none;
+    width: 100%;
+  }
+}

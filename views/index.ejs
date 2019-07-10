@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel='stylesheet' href='/styles/main.css' />
+    <link rel='stylesheet' href='/styles/timeline.css' />
+  </head>
+  <body>
+    <main>
+      <div id='header' id='#'>
+        <h1><%= title %></h1>
+        <div class='h-divisor'></div>
+        <h4><%= data.profession %></h4>
+      </div>
+
+      <div id='nav'>
+        <a href='/#'>Início</a>
+        <a href='#experience'>Experiência</a>
+        <a href='#education'>Educação</a>
+        <a href='#skills'>Habilidades</a>
+        <a href='#interests'>Interesses</a>
+      </div>
+
+      <div class='main'>
+        <div class='data'>
+          <div class='personal'>
+            <%= data.description %>
+          </div>
+          <div class='contact'>
+            <p><strong>Telefone</strong>: <%= data.personal.phone %></p>
+            <p><strong>E-mail</strong>: <%= data.personal.email %></p>
+            <%= %>
+            <%= %>
+          </div>
+        </div>
+        <div class='section' id='experience'>
+          <h2 class='section-title'>Experiência profissional</h2>
+          <div class='timeline'>
+            <% data.experience.map(xp => { %>
+              <div class='container'>
+                <div class='content'>
+                  <h2><%= xp.company %></h2>
+                  <h3><%= xp.office %></h3>
+                  <div class='period'>
+                    <%= xp.period.start %><br><%= xp.period.end %>
+                  </div>
+                  <p><%= xp.description %></p>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      </div>
+
+      <div id='footer'>
+        <h5>Version <%= version %></h5>
+      </div>
+    </main>
+    <script>
+      window.onscroll = () => myFunction();
+      let navbar = document.getElementById('nav');
+      let sticky = nav.offsetTop;
+
+      function myFunction() {
+        window.pageYOffset >= sticky ?
+          navbar.classList.add('sticky') :
+          navbar.classList.remove('sticky');
+      }
+    </script>
+  </body>
+</html>
